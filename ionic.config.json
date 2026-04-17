@@ -1,0 +1,7 @@
+{
+  "name": "KnowItAll",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
