@@ -10,4 +10,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'general-trivia',
+    loadComponent: () => import('./general-trivia/general-trivia.page').then(m => m.GeneralTriviaPage)
+  },
 ];
