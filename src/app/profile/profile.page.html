@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label>Name: {{ userName }}</ion-label>
+    <ion-button slot="end" (click)="editName()">Edit</ion-button>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>All Trivia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Total Correct</ion-label>
+        <ion-badge color="success">{{ totalCorrect }}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total Incorrect</ion-label>
+        <ion-badge color="danger">{{ totalIncorrect }}</ion-badge>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>General Trivia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Correct</ion-label>
+        <ion-badge color="success">{{ generalTriviaCorrect }}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>Incorrect</ion-label>
+        <ion-badge color="danger">{{ generalTriviaIncorrect }}</ion-badge>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

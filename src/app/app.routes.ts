@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'general-trivia',
     loadComponent: () => import('./general-trivia/general-trivia.page').then(m => m.GeneralTriviaPage)
   },
+  {
+    path: 'profile',
+    loadComponent: () => import('./profile/profile.page').then( m => m.ProfilePage)
+  },
 ];
