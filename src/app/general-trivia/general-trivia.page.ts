@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons } from '@ionic/angular/standalone';
 import { TriviaApi } from '../services/trivia-api';
 import { Storage } from '@ionic/storage-angular';
 
@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './general-trivia.page.html',
   styleUrls: ['./general-trivia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons]
 })
 export class GeneralTriviaPage {
   questions: any[] = [];

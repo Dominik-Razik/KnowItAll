@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-button [routerLink]="['/profile']" shape="round" slot="end">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
     <ion-title>
-      Blank
+      Know It All
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +12,16 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Know It All</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h3>Ready for trivia, {{ username }}?</h3>
+
+  <ion-card color="warning" class="trivia-navigation" [routerLink]="['/general-trivia']">
+  <ion-card-header>
+    <ion-card-title>General Trivia</ion-card-title>
+    <ion-card-subtitle>Try out your general knowledge of everything!</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonBadge, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonBadge, IonButton, IonButtons, IonBackButton } from '@ionic/angular/standalone';
 import { Storage } from '@ionic/storage-angular';
 import { Dialog } from '@capacitor/dialog';
 
@@ -8,7 +8,7 @@ import { Dialog } from '@capacitor/dialog';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonBadge, IonButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonBadge, IonButton, IonButtons, IonBackButton]
 })
 export class ProfilePage {
   userName: string = 'User';
@@ -65,8 +65,8 @@ export class ProfilePage {
 
   async editName() {
     const { value } = await Dialog.prompt({
-      title: 'Edit Name',
-      message: 'Enter your new name',
+      title: 'Edit Username',
+      message: 'Enter your new username',
       inputText: this.userName
     });
 
