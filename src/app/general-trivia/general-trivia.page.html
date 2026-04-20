@@ -60,7 +60,25 @@
 
     @if (currentIndex >= questions.length && questions.length > 0) {
     <div class="center">
-      <p>You've completed all questions!</p>
+      <h2>Quiz Completed!</h2>
+      <ion-card class="result">
+        <ion-card-header>
+          <ion-card-title>Session Results</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label>Correct</ion-label>
+              <ion-badge color="success">{{ sessionCorrect }}</ion-badge>
+            </ion-item>
+            <ion-item>
+              <ion-label>Incorrect</ion-label>
+              <ion-badge color="danger">{{ sessionIncorrect }}</ion-badge>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+        <ion-button href="home">Go back to home</ion-button>
+      </ion-card>
     </div>
     }
 

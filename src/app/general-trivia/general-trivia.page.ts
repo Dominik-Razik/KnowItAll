@@ -1,28 +1,36 @@
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonThumbnail, IonIcon, IonLabel, IonNav } from '@ionic/angular/standalone';
 import { TriviaApi } from '../services/trivia-api';
 import { Storage } from '@ionic/storage-angular';
+import { addIcons } from 'ionicons';
+import { close, checkmark } from 'ionicons/icons';
 
 @Component({
   selector: 'app-general-trivia',
   templateUrl: './general-trivia.page.html',
   styleUrls: ['./general-trivia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonThumbnail, IonIcon, IonLabel, IonNav]
 })
 export class GeneralTriviaPage {
   questions: any[] = [];
   currentIndex: number = 0;
   selectedAnswer: string = '';
   isCorrect: boolean = false;
+  sessionCorrect: number = 0;
+  sessionIncorrect: number = 0;
 
-  constructor(private triviaApi: TriviaApi, private storage: Storage) { }
+  constructor(private triviaApi: TriviaApi, private storage: Storage) {
+    addIcons({ close, checkmark });
+  }
 
   async ionViewWillEnter() {
     await this.storage.create();
 
     this.questions = [];
     this.currentIndex = 0;
+    this.sessionCorrect = 0;
+    this.sessionIncorrect = 0;
 
     this.triviaApi.getGeneralTrivia().subscribe((data: any) => {
       for (let i = 0; i < data.results.length; i++) {
@@ -56,6 +64,7 @@ export class GeneralTriviaPage {
       let generalTriviaCorrect = await this.storage.get('general_trivia_correct');
       if (!generalTriviaCorrect) { generalTriviaCorrect = 0; }
       await this.storage.set('general_trivia_correct', generalTriviaCorrect + 1);
+      this.sessionCorrect++;
 
       let totalCorrect = await this.storage.get('total_correct');
       if (!totalCorrect) { totalCorrect = 0; }
@@ -65,6 +74,7 @@ export class GeneralTriviaPage {
       let generalTriviaIncorrect = await this.storage.get('general_trivia_incorrect');
       if (!generalTriviaIncorrect) { generalTriviaIncorrect = 0; }
       await this.storage.set('general_trivia_incorrect', generalTriviaIncorrect + 1);
+      this.sessionIncorrect++;
 
       let totalIncorrect = await this.storage.get('total_incorrect');
       if (!totalIncorrect) { totalIncorrect = 0; }
