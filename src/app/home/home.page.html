@@ -1,8 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-button [routerLink]="['/profile']" shape="round" slot="end">
-        <ion-icon slot="icon-only" name="person"></ion-icon>
-      </ion-button>
+      <ion-icon slot="icon-only" name="person"></ion-icon>
+    </ion-button>
     <ion-title>
       Know It All
     </ion-title>
@@ -18,10 +18,20 @@
 
   <h3>Ready for trivia, {{ username }}?</h3>
 
+  <div class="difficulty-container">
+    <ion-item lines="none" class="difficulty-select">
+      <ion-select label="Difficulty" interface="popover" label-placement="floating" [(ngModel)]="triviaApi.difficulty" (ngModelChange)="onDifficultyChange($event)">
+        <ion-select-option value="easy">Easy</ion-select-option>
+        <ion-select-option value="medium">Medium</ion-select-option>
+        <ion-select-option value="hard">Hard</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
   <ion-card color="warning" class="trivia-navigation" [routerLink]="['/general-trivia']">
-  <ion-card-header>
-    <ion-card-title>General Trivia</ion-card-title>
-    <ion-card-subtitle>Try out your general knowledge of everything!</ion-card-subtitle>
-  </ion-card-header>
-</ion-card>
+    <ion-card-header>
+      <ion-card-title>General Trivia</ion-card-title>
+      <ion-card-subtitle>Try out your general knowledge of everything!</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

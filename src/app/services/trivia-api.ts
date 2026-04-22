@@ -6,9 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TriviaApi {
-  constructor(private httpClient:HttpClient) {}
+  difficulty: string = 'medium';
 
-  getGeneralTrivia():Observable<any>{
-    return this.httpClient.get('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple');
+  constructor(private httpClient: HttpClient) { }
+
+  getGeneralTrivia(): Observable<any> {
+    return this.httpClient.get(`https://opentdb.com/api.php?amount=10&category=9&difficulty=${this.difficulty}&type=multiple`);
   }
 }
