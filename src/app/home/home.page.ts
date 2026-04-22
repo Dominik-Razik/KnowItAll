@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonRouterLink, IonMenu, IonButtons, IonMenuButton, IonIcon, IonButton, IonItem, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonRouterLink, IonIcon, IonButton, IonItem, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 import { RouterLinkWithHref } from "@angular/router";
 import { Storage } from '@ionic/storage-angular';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { person } from 'ionicons/icons';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonRouterLink, RouterLinkWithHref, IonMenu, IonButtons, IonMenuButton, IonIcon, IonButton, IonItem, IonSelect, IonSelectOption, FormsModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonRouterLink, RouterLinkWithHref, IonIcon, IonButton, IonItem, IonSelect, IonSelectOption, FormsModule],
 })
 export class HomePage {
   username: string = 'User';

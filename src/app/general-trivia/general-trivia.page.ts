@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonThumbnail, IonIcon, IonLabel, IonNav } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { TriviaApi } from '../services/trivia-api';
 import { Storage } from '@ionic/storage-angular';
 import { addIcons } from 'ionicons';
 import { close, checkmark } from 'ionicons/icons';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-general-trivia',
   templateUrl: './general-trivia.page.html',
   styleUrls: ['./general-trivia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonThumbnail, IonIcon, IonLabel, IonNav]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonLabel, RouterLinkWithHref]
 })
 export class GeneralTriviaPage {
   questions: any[] = [];
