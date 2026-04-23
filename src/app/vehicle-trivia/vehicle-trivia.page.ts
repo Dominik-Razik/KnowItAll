@@ -4,14 +4,14 @@ import { TriviaApi } from '../services/trivia-api';
 import { Storage } from '@ionic/storage-angular';
 import { addIcons } from 'ionicons';
 import { close, checkmark } from 'ionicons/icons';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-trivia',
   templateUrl: './vehicle-trivia.page.html',
   styleUrls: ['./vehicle-trivia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonLabel, RouterLinkWithHref]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent, IonBadge, IonBackButton, IonButtons, IonCardHeader, IonCardTitle, IonList, IonItem, IonLabel, RouterLink]
 })
 export class VehicleTriviaPage {
 
