@@ -20,7 +20,8 @@
 
   <div class="difficulty-container">
     <ion-item lines="none" class="difficulty-select">
-      <ion-select label="Difficulty" interface="popover" label-placement="floating" [(ngModel)]="triviaApi.difficulty" (ngModelChange)="onDifficultyChange($event)">
+      <ion-select label="Difficulty" interface="popover" label-placement="floating" [(ngModel)]="triviaApi.difficulty"
+        (ngModelChange)="onDifficultyChange($event)">
         <ion-select-option value="easy">Easy</ion-select-option>
         <ion-select-option value="medium">Medium</ion-select-option>
         <ion-select-option value="hard">Hard</ion-select-option>
@@ -32,6 +33,20 @@
     <ion-card-header>
       <ion-card-title>General Trivia</ion-card-title>
       <ion-card-subtitle>Try out your general knowledge of everything!</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="secondary" class="trivia-navigation" [routerLink]="['/vehicle-trivia']">
+    <ion-card-header>
+      <ion-card-title>Vehicle Trivia</ion-card-title>
+      <ion-card-subtitle>See what you know about vehicles!</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="tertiary" class="trivia-navigation" [routerLink]="['/gaming-trivia']">
+    <ion-card-header>
+      <ion-card-title>Video Game Trivia</ion-card-title>
+      <ion-card-subtitle>Check out what you know about video games!</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
 </ion-content>

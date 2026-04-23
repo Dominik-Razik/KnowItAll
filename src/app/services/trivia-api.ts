@@ -13,4 +13,12 @@ export class TriviaApi {
   getGeneralTrivia(): Observable<any> {
     return this.httpClient.get(`https://opentdb.com/api.php?amount=10&category=9&difficulty=${this.difficulty}&type=multiple`);
   }
+
+  getVehicleTrivia(): Observable<any> {
+    return this.httpClient.get(`https://opentdb.com/api.php?amount=10&category=28&difficulty=${this.difficulty}&type=multiple`);
+  }
+
+  getGamingTrivia(): Observable<any> {
+    return this.httpClient.get(`https://opentdb.com/api.php?amount=10&category=15&difficulty=${this.difficulty}&type=multiple`);
+  }
 }

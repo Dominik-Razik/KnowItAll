@@ -53,9 +53,11 @@
 .answer-btn {
   width: 100%;
   height: 100%;
+  margin: 0;
   --border-radius: 12px;
   font-size: 16px;
   white-space: normal;
+  overflow: hidden;
 }
 
 .center {

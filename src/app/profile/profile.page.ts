@@ -16,6 +16,10 @@ export class ProfilePage {
   totalIncorrect: number = 0;
   generalTriviaCorrect: number = 0;
   generalTriviaIncorrect: number = 0;
+  vehicleTriviaCorrect: number = 0;
+  vehicleTriviaIncorrect: number = 0;
+  gamingTriviaCorrect: number = 0;
+  gamingTriviaIncorrect: number = 0;
 
   constructor(private storage: Storage) { }
 
@@ -60,6 +64,38 @@ export class ProfilePage {
     }
     if (!gti) {
       this.generalTriviaIncorrect = 0;
+    }
+
+    let vtc = await this.storage.get('vehicle_trivia_correct');
+    if (vtc) {
+      this.vehicleTriviaCorrect = vtc;
+    }
+    if (!vtc) {
+      this.vehicleTriviaCorrect = 0;
+    }
+
+    let vti = await this.storage.get('vehicle_trivia_incorrect');
+    if (vti) {
+      this.vehicleTriviaIncorrect = vti;
+    }
+    if (!vti) {
+      this.vehicleTriviaIncorrect = 0;
+    }
+
+    let gametc = await this.storage.get('gaming_trivia_correct');
+    if (gametc) {
+      this.gamingTriviaCorrect = gametc;
+    }
+    if (!gametc) {
+      this.gamingTriviaCorrect = 0;
+    }
+
+    let gameti = await this.storage.get('gaming_trivia_incorrect');
+    if (gameti) {
+      this.gamingTriviaIncorrect = gameti;
+    }
+    if (!gameti) {
+      this.gamingTriviaIncorrect = 0;
     }
   }
 

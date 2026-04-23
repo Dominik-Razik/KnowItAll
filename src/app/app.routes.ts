@@ -18,4 +18,12 @@ export const routes: Routes = [
     path: 'profile',
     loadComponent: () => import('./profile/profile.page').then( m => m.ProfilePage)
   },
+  {
+    path: 'vehicle-trivia',
+    loadComponent: () => import('./vehicle-trivia/vehicle-trivia.page').then( m => m.VehicleTriviaPage)
+  },
+  {
+    path: 'gaming-trivia',
+    loadComponent: () => import('./gaming-trivia/gaming-trivia.page').then( m => m.GamingTriviaPage)
+  },
 ];
